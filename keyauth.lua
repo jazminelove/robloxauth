@@ -2,10 +2,10 @@
 
 -- List of valid keys (for simplicity, using a hardcoded list)
 local validKeys = {
-    "T0F6ETM9T65OVT34",
-    "12345ABCDE",
-    "1RVL90TP2PFESMPW",
-    "spiderman"
+    "zjxfmcsl",
+    "cyvvdxhn",
+    "wxryxmkl",
+    "vbyzrlhf"
 }
 
 -- Function to validate the key
