@@ -1,21 +1,19 @@
--- Lua script on Pastebin to validate keys
- 
--- Predefined valid keys (you can change this to a more secure system if needed)
+-- keyauth script (keyauth.lua)
+
+-- List of valid keys (for simplicity, using a hardcoded list)
 local validKeys = {
-    "T0F6ETM9T65OVT34",  -- 4/23
+    "T0F6ETM9T65OVT34",
+    "12345ABCDE",
     "1RVL90TP2PFESMPW",
-	  "fotrnitebidf",
-	  "ABC123XYZ456",
-	  "ABC123XYZ456",
-	  "ABC123XYZ456",
-	  "ABC123XYZ456",
+    "spiderman"
 }
- 
+
 -- Function to validate the key
 function validateKey(playerKey)
-    for _, validKey in ipairs(validKeys) do
-        if playerKey == validKey then
-            return true
+    for _, key in ipairs(validKeys) do
+        if key == playerKey then
+            return true  -- Key is valid
         end
     end
-    return false
+    return false  -- Key is invalid
+end
