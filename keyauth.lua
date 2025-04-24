@@ -1,19 +1,18 @@
 -- keyauth script (keyauth.lua)
 
--- List of valid keys (for simplicity, using a hardcoded list)
+-- List of valid keys and HWIDs (linked by key)
 local validKeys = {
-    "zjxfmcsl",
-    "cyvvdxhn",
-    "wxryxmkl",
-    "vbyzrlhf"
+    zjxfmcsl = "HWID123456",  -- example pair
+    cyvvdxhn = "HWID654321",
+    wxryxmkl = "HWID111222",
+    vbyzrlhf = "HWID333444",
 }
 
--- Function to validate the key
-function validateKey(playerKey)
-    for _, key in ipairs(validKeys) do
-        if key == playerKey then
-            return true  -- Key is valid
-        end
+-- Function to validate the key and HWID
+function validateKey(playerKey, hwid)
+    local expectedHwid = validKeys[playerKey]
+    if expectedHwid and expectedHwid == hwid then
+        return true  -- Valid key + HWID
     end
-    return false  -- Key is invalid
+    return false  -- Invalid combo
 end
