@@ -1,7 +1,7 @@
 -- keyauth.lua
 
 local validKeys = {
-    zjxfmcsl = "02E9DB8F-8551-4B6A-9380-4BFF82B309A0",
+    zjxfmcsl = "3186D30C-2785-4C36-B9A7-660386201427",
     cyvvdxhn = "1a2b-3c4d-5e6f",
     wxryxmkl = "abc-123-def-456",
     vbyzrlhf = "xyz-987-pqr-654",
