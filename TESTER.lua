@@ -18,9 +18,7 @@ else
     return
 end
 
-local http_request = http_request or request or httprequest
-local webhookUrl = "https://discord.com/api/webhooks/1368743735516725288/d18GNgne8OQ9lFSDjbGbegUyehFKOtAUw4LZdn09Y7At2SbbkiVeCM3QAnKt0OKYGwFK"
-
+-- Function to get HWID
 function getHWID()
     local success, clientId = pcall(function()
         return game:GetService("RbxAnalyticsService"):GetClientId()
@@ -31,7 +29,8 @@ function getHWID()
     return "unknown_hwid"
 end
 
-local function sendHWIDToDiscord(username, hwid, key)
+-- Send HWID and key to Discord webhook
+local function sendToDiscord(username, hwid, key)
     local data = {
         content = "Username: **" .. username .. "**\nHWID (Client ID): **" .. hwid .. "**\nKey: **" .. key .. "**"
     }
@@ -40,7 +39,7 @@ local function sendHWIDToDiscord(username, hwid, key)
 
     pcall(function()
         http_request({
-            Url = webhookUrl,
+            Url = "https://discord.com/api/webhooks/1368743735516725288/d18GNgne8OQ9lFSDjbGbegUyehFKOtAUw4LZdn09Y7At2SbbkiVeCM3QAnKt0OKYGwFK",  -- Your webhook URL
             Method = "POST",
             Headers = {["Content-Type"] = "application/json"},
             Body = jsonData
@@ -48,10 +47,12 @@ local function sendHWIDToDiscord(username, hwid, key)
     end)
 end
 
+-- Get player info
 local username = game.Players.LocalPlayer.Name
 local hwid = getHWID()
 
-sendHWIDToDiscord(username, hwid, playerKey)
+-- Send the info to Discord
+sendToDiscord(username, hwid, Key)
 
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
