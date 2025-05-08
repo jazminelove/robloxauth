@@ -1,7 +1,7 @@
 local validKeys = {
-    "key123",
-    "testkey2025",
-    "myfreeaccesskey"
+    "jazmine",
+    "cyvvdxhn",
+    "test92ajsdn90ay4"
 }
 
 function validateKey(key)
