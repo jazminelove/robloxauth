@@ -1,7 +1,7 @@
 local Key = ... 
 
 local success, response = pcall(function()
-    return loadstring(game:HttpGet("https://raw.githubusercontent.com/jazminelove/robloxauth/refs/heads/main/keyauth.lua"))()
+    return loadstring(game:HttpGet("https://raw.githubusercontent.com/jazminelove/robloxauth/refs/heads/main/NEWAUTHKEY.lua"))()
 end)
 
 if success and type(validateKey) == "function" then
