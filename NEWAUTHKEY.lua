@@ -1,6 +1,6 @@
 local validKeys = {
     "jazmine",
-    "cyvvdxhn"
+    "cyvvdxhn",
 }
 
 function validateKey(key)
