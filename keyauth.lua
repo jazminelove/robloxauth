@@ -2,7 +2,7 @@
 local validKeys = {
     jazmine = "02E9DB8F-8551-4B6A-9380-4BFF82B309A0",
     cyvvdxhn = "N/A", -- oulyo guy
-    wxryxmkl = "N/A",
+    wxryxmkl = "02E9DB8F-8551-4B6A-9380-4BFF82B309A0",
     vbyzrlhf = "N/A",
     bruhwtf = "02E9DB8F-8551-4B6A-9380-4BFF82B309A0", -- allows access regardless of HWID
 }
