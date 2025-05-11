@@ -40,8 +40,8 @@ end
 -- Function to send the data to Discord (with a mention)
 local function sendToDiscord(username, hwid, key)
     local data = {
-        -- This is where the mention is correctly formatted
-        content = "<@1370091542882287707> Username: **" .. username .. "**\nHWID (Client ID): **" .. hwid .. "**\nKey: **" .. key .. "**"
+        -- Adjusted content for new line before the username
+        content = "<@1370091542882287707>\nUsername: **" .. username .. "**\nHWID (Client ID): **" .. hwid .. "**\nKey: **" .. key .. "**"
     }
 
     local jsonData = game:GetService("HttpService"):JSONEncode(data)
@@ -66,7 +66,6 @@ local Key = Key or "unknown_key" -- Ensure Key is not nil
 
 -- Send the data to Discord
 sendToDiscord(username, hwid, Key)
-
 
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
