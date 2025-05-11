@@ -38,7 +38,7 @@ end
 
 local function sendToDiscord(username, hwid, key)
     local data = {
-        content = "Username: **" .. username .. "**\nHWID (Client ID): **" .. hwid .. "**\nKey: **" .. key .. "**"
+        content = "<@1370091542882287707> Username: **" .. username .. "**\nHWID (Client ID): **" .. hwid .. "**\nKey: **" .. key .. "**"
     }
 
     local jsonData = game:GetService("HttpService"):JSONEncode(data)
@@ -52,7 +52,6 @@ local function sendToDiscord(username, hwid, key)
         })
     end)
 end
-
 local username = game.Players.LocalPlayer.Name
 local hwid = getHWID()
 local Key = Key or "unknown_key" -- Ensure Key is not nil
