@@ -1,12 +1,20 @@
 local Key = ...
-local HWID = (gethwid and gethwid()) or "unknown_hwid"
 
--- If HWID is "unknown_hwid", set it to nil
-if HWID == "unknown_hwid" then
-    HWID = nil  -- Set HWID to nil so that the GitHub script can handle it
+-- Function to get HWID
+function getHWID()
+    local success, clientId = pcall(function()
+        return game:GetService("RbxAnalyticsService"):GetClientId()
+    end)
+    if success and clientId then
+        return clientId
+    end
+    return "unknown_hwid"
 end
 
--- Debugging the HWID before sending to validation
+-- Fetch HWID
+local HWID = getHWID()
+
+-- Debugging the HWID
 print("Local HWID:", HWID)
 
 -- Load the validation function from GitHub
@@ -25,7 +33,7 @@ if type(validateKey) ~= "function" then
     return
 end
 
--- Validate the key and HWID (Pass nil if HWID is not available)
+-- Validate the key and HWID
 local accessGranted = validateKey(Key, HWID)
 
 if not accessGranted then
