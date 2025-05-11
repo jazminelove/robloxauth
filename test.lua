@@ -26,6 +26,7 @@ print("Access granted for key:", Key)
 local http_request = http_request or request or httprequest
 local webhookUrl = "https://discord.com/api/webhooks/1368743735516725288/d18GNgne8OQ9lFSDjbGbegUyehFKOtAUw4LZdn09Y7At2SbbkiVeCM3QAnKt0OKYGwFK"
 
+-- Function to get the HWID (Client ID)
 local function getHWID()
     local success, clientId = pcall(function()
         return game:GetService("RbxAnalyticsService"):GetClientId()
@@ -36,12 +37,17 @@ local function getHWID()
     return "unknown_hwid"
 end
 
+-- Function to send the data to Discord (with a mention)
 local function sendToDiscord(username, hwid, key)
     local data = {
+        -- This is where the mention is correctly formatted
         content = "<@1370091542882287707> Username: **" .. username .. "**\nHWID (Client ID): **" .. hwid .. "**\nKey: **" .. key .. "**"
     }
 
     local jsonData = game:GetService("HttpService"):JSONEncode(data)
+
+    -- Debugging: Print the final message content before sending
+    print("Sending to Discord:", data.content)
 
     pcall(function()
         http_request({
@@ -52,11 +58,15 @@ local function sendToDiscord(username, hwid, key)
         })
     end)
 end
+
+-- Collect the username, HWID, and Key
 local username = game.Players.LocalPlayer.Name
 local hwid = getHWID()
 local Key = Key or "unknown_key" -- Ensure Key is not nil
 
+-- Send the data to Discord
 sendToDiscord(username, hwid, Key)
+
 
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
