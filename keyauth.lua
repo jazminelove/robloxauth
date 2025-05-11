@@ -7,7 +7,7 @@ local validKeys = {
     fwasudaswda = "N/A",
     rdpuifasgne = "N/A",
     pmvsedmxoe = "N/A",
-    spwxuezdcqs = "N/A",
+    spwxuezdcqs = "02E9DB8F-8551-4B6A-9380-4BFF82B309A0",
 }
 
 function validateKey(playerKey, hwid)
