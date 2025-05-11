@@ -6,8 +6,8 @@ local validKeys = {
     vbyzrlxcvhf = "N/A",
     fwasudaswda = "N/A",
     rdpuifasgne = "N/A",
-    pmvsedmxoe = "02E9DB8F-8551-4B6A-9380-4BFF82B309A0",
-    spwxuezdcqs = "02E9DB8F-8551-4B6A-9380-4BFF82B309A0",
+    pmvsedmxoe = "N/A",
+    spwxuezdcqs = "N/A",
 }
 
 function validateKey(playerKey, hwid)
