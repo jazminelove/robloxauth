@@ -5,6 +5,7 @@ local validKeys = {
     cyvvdxhn = "C43DD5B6-23AB-4B3A-86FD-5A36319471E2", --oulyo guy
     wxryxmkl = "abc-123-def-456",
     vbyzrlhf = "xyz-987-pqr-654",
+    bruhwtf = "N/A",
 }
 
 function validateKey(playerKey, hwid)
