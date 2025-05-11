@@ -1,12 +1,12 @@
 local Key = ...
 local HWID = (gethwid and gethwid()) or "unknown_hwid"
 
--- Check if the HWID is provided or should be ignored
+-- If HWID is "unknown_hwid", set it to nil
 if HWID == "unknown_hwid" then
-    HWID = nil  -- If no HWID is provided, pass nil
+    HWID = nil  -- Set HWID to nil so that it doesn't get checked if it's not available
 end
 
--- Load the validation function from the GitHub source
+-- Load the validation function from GitHub
 local source = game:HttpGet("https://raw.githubusercontent.com/jazminelove/robloxauth/refs/heads/main/keyauth.lua")
 
 local validateKeyFunc, err = loadstring(source)
@@ -15,14 +15,14 @@ if not validateKeyFunc then
     return
 end
 
--- Get the validateKey function from GitHub
+-- Get the validateKey function
 local validateKey = validateKeyFunc()
 if type(validateKey) ~= "function" then
     warn("Returned value is not a function")
     return
 end
 
--- Validate the key and HWID
+-- Validate the key and HWID (Pass nil if HWID is not available)
 local accessGranted = validateKey(Key, HWID)
 
 if not accessGranted then
