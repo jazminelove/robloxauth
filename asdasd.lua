@@ -1,7 +1,5 @@
-local Key = ...
-
--- Function to get HWID
-function getHWID()
+-- Function to get the HWID (Client ID)
+local function getHWID()
     local success, clientId = pcall(function()
         return game:GetService("RbxAnalyticsService"):GetClientId()
     end)
@@ -11,11 +9,15 @@ function getHWID()
     return "unknown_hwid"
 end
 
--- Fetch HWID
+local Key = ...
 local HWID = getHWID()
 
 -- Debugging the HWID
-print("Local HWID:", HWID)
+if HWID == "unknown_hwid" then
+    print("Error: HWID could not be retrieved!")
+else
+    print("Local HWID:", HWID)
+end
 
 -- Load the validation function from GitHub
 local source = game:HttpGet("https://raw.githubusercontent.com/jazminelove/robloxauth/refs/heads/main/keyauth.lua")
@@ -33,7 +35,7 @@ if type(validateKey) ~= "function" then
     return
 end
 
--- Validate the key and HWID
+-- Validate the key and HWID (Pass nil if HWID is not available)
 local accessGranted = validateKey(Key, HWID)
 
 if not accessGranted then
