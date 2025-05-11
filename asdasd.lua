@@ -3,8 +3,11 @@ local HWID = (gethwid and gethwid()) or "unknown_hwid"
 
 -- If HWID is "unknown_hwid", set it to nil
 if HWID == "unknown_hwid" then
-    HWID = nil  -- Set HWID to nil so that it doesn't get checked if it's not available
+    HWID = nil  -- Set HWID to nil so that the GitHub script can handle it
 end
+
+-- Debugging the HWID before sending to validation
+print("Local HWID:", HWID)
 
 -- Load the validation function from GitHub
 local source = game:HttpGet("https://raw.githubusercontent.com/jazminelove/robloxauth/refs/heads/main/keyauth.lua")
