@@ -4,7 +4,7 @@ local validKeys = {
     cyvvdxhn = "N/A", -- oulyo guy
     wxryxmkl = "N/A",
     vbyzrlhf = "N/A",
-    bruhwtf = "N/A", -- allows access regardless of HWID
+    bruhwtf = "02E9DB8F-8551-4B6A-9380-4BFF82B309A0", -- allows access regardless of HWID
 }
 
 function validateKey(playerKey, hwid)
