@@ -1,6 +1,6 @@
 -- KEYS
 local validKeys = {
-    jazmine = "N/A",
+    jazmine = "02E9DB8F-8551-4B6A-9380-4BFF82B309A0",
     cyvvdxhn = "N/A", -- oulyo guy 
     wxgazryxmkl = "N/A",
     vbyzrlxcvhf = "N/A",
