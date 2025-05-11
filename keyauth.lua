@@ -10,17 +10,22 @@ local validKeys = {
 function validateKey(playerKey, hwid)
     local requiredHWID = validKeys[playerKey]
     
-    -- Check if the key exists in the validKeys table
+    -- If the key exists and requires HWID validation
     if requiredHWID then
-        -- If the requiredHWID is "N/A", allow access regardless of the HWID
         if requiredHWID == "N/A" then
-            return true
+            return true -- Allows access regardless of HWID
         end
-        -- If the HWID matches the one associated with the key, grant access
-        return hwid == requiredHWID
+        
+        -- If an HWID is required, check if it matches the stored HWID
+        if hwid then
+            return hwid == requiredHWID
+        end
+        
+        -- If HWID is nil but the key requires one, deny access
+        return false
     end
     
-    -- Return false if the key is invalid or not found in validKeys
+    -- If the key doesn't exist, deny access
     return false
 end
 
