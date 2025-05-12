@@ -8,9 +8,6 @@ local validKeys = {
     rdpuifasgne = "N/A",
     pmvsedmxoe = "N/A",
     spwxuezdcqs = "N/A",
-    amazing = "N/A",
-    fart = "N/A",
-    poo = "N/A",
 }
 
 function validateKey(playerKey, hwid)
